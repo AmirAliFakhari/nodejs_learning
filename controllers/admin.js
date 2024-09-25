@@ -17,7 +17,7 @@ exports.postAddProduct = (req, res, next) => {
   req.user.createProduct({
     title: title,
     price: price,
-    imgUrl: imageUrl,
+    imageUrl: imageUrl,
     description: description,
   })
     .then(() => {
@@ -61,7 +61,7 @@ exports.postEditProduct = (req, res, next) => {
     product.title = updatedTitle
     product.price = updatedPrice
     product.description = updatedDesc
-    product.imgUrl = updatedImageUrl
+    product.imageUrl = updatedImageUrl
     return product.save()
   }).then(() => {
     res.redirect('/admin/products');
